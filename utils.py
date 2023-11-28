@@ -1371,6 +1371,7 @@ class compute_metric:
 
 def model_saver(model,
                 path,
+                x_train,
                 x_test, 
                 hidden_dim, 
                 latent_dims, 
@@ -1478,9 +1479,11 @@ def model_saver(model,
                 np.save( f"{path}/{distrib_type}/{loss_type}/{datatype}/latent_{latent_dims}/{epochs}/{mmd_typ}/loggers.npy", model.loggers)
                 
     #dsentanglement metrics...compute and save
-    z_mean, z_std, z = model.model.encoder.predict(x_test, batch_size = batch_size) #\mu, stdev, reparam
-    results = compute_metric(x_test.reshape(x_test.shape[0], x_test.shape[1]), z, True, 10).run()
-    results['z'] = z
+    z_mean_tr, z_std_tr, z_tr = model.model.encoder.predict(x_train, batch_size = batch_size) #\mu, stdev, reparam
+    z_mean_ts, z_std_ts, z_ts = model.model.encoder.predict(x_test, batch_size = batch_size) #\mu, stdev, reparam
+    results = compute_metric(x_test.reshape(x_test.shape[0], x_test.shape[1]), z_ts, True, 10).run()
+    results['z_tr'] = z_tr
+    results['z_ts'] = z_ts
     
     if not loss_type == 'gcvae':
         if not os.path.exists(os.path.join(path, f"{distrib_type}/{loss_type}/{datatype}/latent_{latent_dims}/{epochs}")):
