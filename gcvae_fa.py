@@ -200,7 +200,84 @@ for lat in [3, 10, 15]:
 
                 
                 
-#%%
+#%% Testing...
 
+import pytest
+
+@pytest.fixture
+def setup_data():
+    path = '/home/ifezukwo/REMEDS'
+    tt = np.load(join(path, 'data.npz'))
+    tt = np.load(join(path, 'data.npz'))
+    X_train_cat, y_train, X_test_cat, y_test, X_train_cont, X_test_cont = tt['X_train_cat'],\
+                                                                            tt['y_train'],\
+                                                                                tt['X_test_cat'],\
+                                                                                    tt['y_test'],\
+                                                                                        tt['X_train_cont'],\
+                                                                                            tt['X_test_cont']
+    n, m = X_train_cat.shape
+    x_train_r = X_train_cat.reshape(X_train_cat.shape[0], X_train_cat.shape[1], 1)
+    x_test_r = X_test_cat.reshape(X_test_cat.shape[0], X_test_cat.shape[1], 1)
+
+    train_dataset = tf.data.Dataset.from_tensor_slices(x_train_r)
+    train_dataset = train_dataset.shuffle(buffer_size=1024).batch(32)
+
+    test_dataset = tf.data.Dataset.from_tensor_slices(x_test_r)
+    test_dataset = test_dataset.shuffle(buffer_size=1024).batch(32)
+
+    inp_dim = x_train_r.shape[1:]
+    
+    return train_dataset, X_test_cat, inp_dim
+
+def test_model_training(setup_data):
+    train_dataset, X_test_cat, inp_dim = setup_data
+
+    loss_index = 3
+    params = {
+        'elbo': (1, 0),
+        'betavae': ((1, 10), 0),
+        'infovae': (0, 500),
+        'gcvae': (1, 1),
+        }
+
+    for lat in [3, 10, 15]:
+        lr = 1e-3
+        epochs = 10
+        hidden_dim = 512
+        latent_dims = lat
+        loss_type = list(params.keys())[loss_index]
+        archi_type = 'v1'
+        distrib_type = 'g'
+        beta, gamma = params[f'{loss_type}']
+        mmd_typ = 'mmd'
+        save_model_arg = False
+        save_model_after = 50
+        stopping = True
+        pid_a = True if stopping else False
+        pid_b = True if stopping else False
+
+        model = gcvae(inp_shape=inp_dim,
+                      num_features=inp_dim[0],
+                      hidden_dim=hidden_dim,
+                      latent_dim=latent_dims,
+                      batch_size=32,
+                      beta=beta,
+                      gamma=gamma,
+                      dist=distrib_type,
+                      vloss=loss_type,
+                      lr=lr,
+                      epochs=epochs,
+                      architecture=archi_type,
+                      mmd_type=mmd_typ).fit(train_dataset, X_test_cat,
+                                           datatype, stopping=stopping,
+                                           save_model=save_model_arg,
+                                           save_model_iter=save_model_after,
+                                           pid_a=pid_a,
+                                           pid_b=pid_b)
+
+        assert model is not None
+
+
+#test_model_training(setup_data)
 
                 
