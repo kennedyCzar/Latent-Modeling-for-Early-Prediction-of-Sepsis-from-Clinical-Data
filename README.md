@@ -13,7 +13,7 @@ Data used in for this challenge is sourced from ICU patients in three separate h
 # How to use
 
 - ```git clone https://github.com/kennedyCzar/Latent-Modeling-for-Early-Prediction-of-Sepsis-from-Clinical-Data```
-- Open and run the ```gcvae_fa.py``` file (check that you have the correct path)..Running is seemless as long as data.npz is located by script.
+- Open and run the ```gcvae_fa.py``` file (check that you have the correct path)..Running is seemless as long as ```data.npz``` is located by script.
 - Ensure to clear ```g``` folder before running the script ```gcvae_fa.py```
 - Voila!
   
