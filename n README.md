@@ -9,3 +9,19 @@ The early prediction of sepsis is potentially life-saving, hence, the challenge 
 # Challenge Data
 
 Data used in for this challenge is sourced from ICU patients in three separate hospital systems (source: https://physionet.org/content/challenge-2019/1.0.0/). Data from two hospital systems is publicly available; however, one is censored and used for scoring. The data for each patient will be contained within a single pipe-delimited text file. Each file will have the same header and each row will represent a single hour's worth of data. Available patient co-variates consist of Demographics, Vital Signs, and Laboratory values, which are defined in the tables below.
+
+# How to use
+
+- ```git clone https://github.com/kennedyCzar/Latent-Modeling-for-Early-Prediction-of-Sepsis-from-Clinical-Data```
+- Open and run the ```gcvae_fa.py``` file (check that you have the correct path)..Running is seemless as long as data.npz is located by script.
+- Ensure to clear ```g``` folder before running the script ```gcvae_fa.py```
+- Voila!
+  
+# Results
+
+- The reproducable results are available in the ```g``` folder
+- Simply run the script ```zclass.py``` to obtain markdown-like table and visualizations
+![alt Latent](https://github.com/kennedyCzar/Latent-Modeling-for-Early-Prediction-of-Sepsis-from-Clinical-Data/blob/main/Results/Latent_3.png)
+
+# Paper
+- Brief document explaining solution: [Paper](https://github.com/kennedyCzar/Latent-Modeling-for-Early-Prediction-of-Sepsis-from-Clinical-Data/blob/main/Results/Latent_3.png](https://github.com/kennedyCzar/Latent-Modeling-for-Early-Prediction-of-Sepsis-from-Clinical-Data/blob/main/Latent_Modeling_for_Early_Prediction_of_Septis.pdf)https://github.com/kennedyCzar/Latent-Modeling-for-Early-Prediction-of-Sepsis-from-Clinical-Data/blob/main/Latent_Modeling_for_Early_Prediction_of_Septis.pdf)
