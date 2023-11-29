@@ -1,0 +1,632 @@
+-----------------------------------------------
+SLURM_NNODES: 1
+SLURM_JOB_NODELIST: hpcgpu01
+SLURM_SUBMIT_DIR: /home/ifezukwo
+SLURM_SUBMIT_HOST: hpclogin01
+SLURM_JOB_ID: 65109587
+SLURM_JOB_NAME: GCVAE_B
+SLURM_JOB_PARTITION: audace2018
+SLURM_NTASKS: 1
+SLURM_TASKS_PER_NODE: 1
+SLURM_NTASKS_PER_NODE:
+-----------------------------------------------
+Run program...
+2023-11-29 00:46:04.387131: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-11-29 00:46:05.038046: E tensorflow/stream_executor/cuda/cuda_blas.cc:2981] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2023-11-29 00:46:06.943563: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/apps/cuda-11.2.152/targets/x86_64-linux/lib:/opt/apps/gcc-8.1.0/python-3.7.1/lib:/opt/core/gcc-8.1.0/lib64:/opt/core/gcc-8.1.0/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda-10.0/lib64
+2023-11-29 00:46:06.943831: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/apps/cuda-11.2.152/targets/x86_64-linux/lib:/opt/apps/gcc-8.1.0/python-3.7.1/lib:/opt/core/gcc-8.1.0/lib64:/opt/core/gcc-8.1.0/lib:/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda-10.0/lib64
+2023-11-29 00:46:06.943845: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+/home/ifezukwo/meso-env/lib/python3.7/site-packages/sklearn/neural_network/_multilayer_perceptron.py:500: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+  self.n_iter_ = _check_optimize_result("lbfgs", opt_res, self.max_iter)
+/home/ifezukwo/meso-env/lib/python3.7/site-packages/sklearn/neural_network/_multilayer_perceptron.py:500: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+  self.n_iter_ = _check_optimize_result("lbfgs", opt_res, self.max_iter)
+------------------------------------------------------------------------------------------------------------------------
+|			 VAE 			|
+------------------------------------------------------------------------------------------------------------------------
+==============================
+MLPClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.0900592022847981
+==============================
+AdaBoostClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.653418910123804
+==============================
+GradientBoostingClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.0875213460106528
+==============================
+GaussianNB
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08765498645100912
+==============================
+LinearDiscriminantAnalysis
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08765101907947856
+==============================
+QuadraticDiscriminantAnalysis
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08753933191474783
+==============================
+------------------------------------------------------------------------------------------------------------------------
+|			 $\beta$-VAE 			|
+------------------------------------------------------------------------------------------------------------------------
+==============================
+MLPClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.09010169240950903
+==============================
+AdaBoostClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.6539910597030103
+==============================
+GradientBoostingClassifier
+****Results****
+Accuracy: 0.981
+AUC: 0.500
+Log Loss: 0.09050346137739831
+==============================
+GaussianNB
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08991825734829681
+==============================
+LinearDiscriminantAnalysis
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08990584460970573
+==============================
+QuadraticDiscriminantAnalysis
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08993794203667317
+==============================
+------------------------------------------------------------------------------------------------------------------------
+|			 InfoVAE 			|
+------------------------------------------------------------------------------------------------------------------------
+==============================
+MLPClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.0901119981791183
+==============================
+AdaBoostClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.6529062353829437
+==============================
+GradientBoostingClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08741465970213358
+==============================
+GaussianNB
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08883539092810766
+==============================
+LinearDiscriminantAnalysis
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08922082396294267
+==============================
+QuadraticDiscriminantAnalysis
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08841266494993151
+==============================
+------------------------------------------------------------------------------------------------------------------------
+|			 GCVAE$^\dagger$ 			|
+------------------------------------------------------------------------------------------------------------------------
+==============================
+MLPClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08559547476550954
+==============================
+AdaBoostClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.6531334565282713
+==============================
+GradientBoostingClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08752195808853352
+==============================
+GaussianNB
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.0887691269798695
+==============================
+LinearDiscriminantAnalysis
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08765157828289356
+==============================
+QuadraticDiscriminantAnalysis
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.088366491893679
+==============================
+------------------------------------------------------------------------------------------------------------------------
+|			 GCVAE$^\ddagger$ 			|
+------------------------------------------------------------------------------------------------------------------------
+==============================
+MLPClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08657296351362194
+==============================
+AdaBoostClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.6530010534747784
+==============================
+GradientBoostingClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08707583668506609
+==============================
+GaussianNB
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08848724113106742
+==============================
+LinearDiscriminantAnalysis
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.088225750259174
+==============================
+QuadraticDiscriminantAnalysis
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08925306738202216
+==============================
+------------------------------------------------------------------------------------------------------------------------
+|			 VAE 			|
+------------------------------------------------------------------------------------------------------------------------
+==============================
+MLPClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.09010333906980537
+==============================
+AdaBoostClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.6522902356364124
+==============================
+GradientBoostingClassifier
+****Results****
+Accuracy: 0.981
+AUC: 0.500
+Log Loss: 0.08939519359878222
+==============================
+GaussianNB
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08748683736630937
+==============================
+LinearDiscriminantAnalysis
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08764692581984912
+==============================
+QuadraticDiscriminantAnalysis
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08701267187997297
+==============================
+------------------------------------------------------------------------------------------------------------------------
+|			 $\beta$-VAE 			|
+------------------------------------------------------------------------------------------------------------------------
+==============================
+MLPClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.09010264927063213
+==============================
+AdaBoostClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.6534681822395966
+==============================
+GradientBoostingClassifier
+****Results****
+Accuracy: 0.981
+AUC: 0.501
+Log Loss: 0.09114899850308081
+==============================
+GaussianNB
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08999946046847707
+==============================
+LinearDiscriminantAnalysis
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08994941110939034
+==============================
+QuadraticDiscriminantAnalysis
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.09015916731780094
+==============================
+------------------------------------------------------------------------------------------------------------------------
+|			 InfoVAE 			|
+------------------------------------------------------------------------------------------------------------------------
+==============================
+MLPClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.09010297448694654
+==============================
+AdaBoostClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.651565335467683
+==============================
+GradientBoostingClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.503
+Log Loss: 0.08738278158514749
+==============================
+GaussianNB
+****Results****
+Accuracy: 0.977
+AUC: 0.506
+Log Loss: 0.11000854548077935
+==============================
+LinearDiscriminantAnalysis
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08743125069500066
+==============================
+QuadraticDiscriminantAnalysis
+****Results****
+Accuracy: 0.972
+AUC: 0.509
+Log Loss: 0.12336001881394996
+==============================
+------------------------------------------------------------------------------------------------------------------------
+|			 GCVAE$^\dagger$ 			|
+------------------------------------------------------------------------------------------------------------------------
+==============================
+MLPClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.09009637235464754
+==============================
+AdaBoostClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.6522259760674508
+==============================
+GradientBoostingClassifier
+****Results****
+Accuracy: 0.981
+AUC: 0.500
+Log Loss: 0.08757070812552786
+==============================
+GaussianNB
+****Results****
+Accuracy: 0.981
+AUC: 0.500
+Log Loss: 0.09113230790143034
+==============================
+LinearDiscriminantAnalysis
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.0866453266413202
+==============================
+QuadraticDiscriminantAnalysis
+****Results****
+Accuracy: 0.975
+AUC: 0.508
+Log Loss: 0.10074880800288373
+==============================
+------------------------------------------------------------------------------------------------------------------------
+|			 GCVAE$^\ddagger$ 			|
+------------------------------------------------------------------------------------------------------------------------
+==============================
+MLPClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.09009925950037709
+==============================
+AdaBoostClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.6518498611739426
+==============================
+GradientBoostingClassifier
+****Results****
+Accuracy: 0.981
+AUC: 0.500
+Log Loss: 0.08826055413150216
+==============================
+GaussianNB
+****Results****
+Accuracy: 0.980
+AUC: 0.501
+Log Loss: 0.09376951270292509
+==============================
+LinearDiscriminantAnalysis
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08716868082687021
+==============================
+QuadraticDiscriminantAnalysis
+****Results****
+Accuracy: 0.980
+AUC: 0.501
+Log Loss: 0.09946804835632604
+==============================
+------------------------------------------------------------------------------------------------------------------------
+|			 VAE 			|
+------------------------------------------------------------------------------------------------------------------------
+==============================
+MLPClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.09010324610614055
+==============================
+AdaBoostClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.6522464521683475
+==============================
+GradientBoostingClassifier
+****Results****
+Accuracy: 0.981
+AUC: 0.500
+Log Loss: 0.08860632740947447
+==============================
+GaussianNB
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08718997616100817
+==============================
+LinearDiscriminantAnalysis
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08735531138788803
+==============================
+QuadraticDiscriminantAnalysis
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08723135785599472
+==============================
+------------------------------------------------------------------------------------------------------------------------
+|			 $\beta$-VAE 			|
+------------------------------------------------------------------------------------------------------------------------
+==============================
+MLPClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.09010335710047143
+==============================
+AdaBoostClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.6541495038911129
+==============================
+GradientBoostingClassifier
+****Results****
+Accuracy: 0.981
+AUC: 0.500
+Log Loss: 0.0913602048078349
+==============================
+GaussianNB
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08986835931092917
+==============================
+LinearDiscriminantAnalysis
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08992254657271691
+==============================
+QuadraticDiscriminantAnalysis
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.09000630946493603
+==============================
+------------------------------------------------------------------------------------------------------------------------
+|			 InfoVAE 			|
+------------------------------------------------------------------------------------------------------------------------
+==============================
+MLPClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.09010298489852407
+==============================
+AdaBoostClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.6507556034423813
+==============================
+GradientBoostingClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08655147943095252
+==============================
+GaussianNB
+****Results****
+Accuracy: 0.935
+AUC: 0.533
+Log Loss: 0.2533473271859391
+==============================
+LinearDiscriminantAnalysis
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08702189987346741
+==============================
+QuadraticDiscriminantAnalysis
+****Results****
+Accuracy: 0.933
+AUC: 0.540
+Log Loss: 0.27670702860224017
+==============================
+------------------------------------------------------------------------------------------------------------------------
+|			 GCVAE$^\dagger$ 			|
+------------------------------------------------------------------------------------------------------------------------
+==============================
+MLPClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.0900979448966076
+==============================
+AdaBoostClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.6515990595153177
+==============================
+GradientBoostingClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08648503673108777
+==============================
+GaussianNB
+****Results****
+Accuracy: 0.982
+AUC: 0.501
+Log Loss: 0.09002784668554699
+==============================
+LinearDiscriminantAnalysis
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.0860751511619148
+==============================
+QuadraticDiscriminantAnalysis
+****Results****
+Accuracy: 0.979
+AUC: 0.504
+Log Loss: 0.09497222132994294
+==============================
+------------------------------------------------------------------------------------------------------------------------
+|			 GCVAE$^\ddagger$ 			|
+------------------------------------------------------------------------------------------------------------------------
+==============================
+MLPClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.0901002346673097
+==============================
+AdaBoostClassifier
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.6512187995159165
+==============================
+GradientBoostingClassifier
+****Results****
+Accuracy: 0.981
+AUC: 0.501
+Log Loss: 0.0874052716363081
+==============================
+GaussianNB
+****Results****
+Accuracy: 0.981
+AUC: 0.500
+Log Loss: 0.09072055299790971
+==============================
+LinearDiscriminantAnalysis
+****Results****
+Accuracy: 0.982
+AUC: 0.500
+Log Loss: 0.08589229401269305
+==============================
+QuadraticDiscriminantAnalysis
+****Results****
+Accuracy: 0.980
+AUC: 0.505
+Log Loss: 0.09198566528795968
+==============================
+-----------------------------------------------
