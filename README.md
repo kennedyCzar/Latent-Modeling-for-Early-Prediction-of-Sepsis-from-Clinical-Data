@@ -84,4 +84,4 @@ Data used in for this challenge is sourced from ICU patients in three separate h
 
 
 # Paper
-- Brief document explaining solution: [Paper](https://github.com/kennedyCzar/Latent-Modeling-for-Early-Prediction-of-Sepsis-from-Clinical-Data/blob/main/Results/Latent_3.png](https://github.com/kennedyCzar/Latent-Modeling-for-Early-Prediction-of-Sepsis-from-Clinical-Data/blob/main/Latent_Modeling_for_Early_Prediction_of_Septis.pdf)https://github.com/kennedyCzar/Latent-Modeling-for-Early-Prediction-of-Sepsis-from-Clinical-Data/blob/main/Latent_Modeling_for_Early_Prediction_of_Septis.pdf)
+- Brief document explaining solution: [Paper](https://github.com/kennedyCzar/Latent-Modeling-for-Early-Prediction-of-Sepsis-from-Clinical-Data/blob/main/Latent_Modeling_for_Early_Prediction_of_Septis.pdf)
