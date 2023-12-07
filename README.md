@@ -23,5 +23,65 @@ Data used in for this challenge is sourced from ICU patients in three separate h
 - Simply run the script ```zclass.py``` to obtain markdown-like table and visualizations
 ![alt Latent](https://github.com/kennedyCzar/Latent-Modeling-for-Early-Prediction-of-Sepsis-from-Clinical-Data/blob/main/Results/Latent_3.png)
 
+#### Latent- $v_k \in \mathbb{R}^3$ 			                                          
+
+|		 Model 		        |		   Factor-VAE 		    |		  MIG 		|		   Modularity 		|		 Jemmig 		|
+|----------------------|--------------------------|------------|---------------------|----------------|
+|	 VAE 		            |		 3387.45 +/- 23.84 		|		 0.22 		|		 0.88 		|		 0.30 		          |
+|	 $\beta$-VAE 		    | 		 3379.80 +/- 24.94 	|		 0.19 		|		 0.61 		|		 0.25 		          |
+|	 InfoVAE 		        |		 3378.60 +/- 26.60 		|		 0.09 		|		 0.82 		|		 0.27 		          |
+|	 GCVAE $^\dagger$ 		|		 3388.10 +/- 32.26 		|		 0.10 		|		 0.89 		|		 0.43 		          |
+|	 GCVAE $^\ddagger$ 	|		 3383.20 +/- 16.59 		|		 0.07 		|		 0.84 		|		 0.42 		          |
+
+
+
+|		 Model 		|		 Total loss 		|		 Reconstruction 		|		 KL divergence |
+|---------------|------------------|-----------------------|------------------|
+|	 VAE 			|			 23.684 			|			 18.194 			|			 5.4896 			|
+|	 $\beta$-VAE 			|			 49.568 			|			 38.921 			|			 1.0647 			|
+|	 InfoVAE 			|			 22.185 			|			 18.161 			|			 15.6632 			|
+|	 GCVAE $^\dagger$ 			|			 15.286 			|			 16.941 			|			 25.2697 			|
+|	 GCVAE $^\ddagger$ 			|			 15.150 			|			 16.492 			|			 25.2169 			|
+
+
+#### Latent- $v_k \in \mathbb{R}^{10}$
+
+|		 Model 		|		 Factor-VAE 		|		 MIG 		|		 Modularity 		|		 Jemmig 		|
+|----------------------|--------------------------|------------|---------------------|----------------|
+|	 VAE 		|		 1053.20 +/- 13.72 		|		 0.21 		|		 0.77 		|		 0.28 		|
+|	 $\beta$-VAE 		|		 1051.70 +/- 19.12 		|		 0.19 		|		 0.53 		|		 0.25 		|
+|	 InfoVAE 		|		 1051.20 +/- 15.29 		|		 0.16 		|		 0.86 		|		 0.28 		|
+|	 GCVAE $^\dagger$ 		|		 1048.80 +/- 16.37 		|		 0.11 		|		 0.92 		|		 0.29 		|
+|	 GCVAE $^\ddagger$ 		|		 1050.15 +/- 14.82 		|		 0.09 		|		 0.89 		|		 0.25 		|
+
+
+|		 Model 		|		 Total loss 		|		 Reconstruction 		|		 KL divergence |
+|---------------|------------------|-----------------------|------------------|
+|	 VAE 			|			 22.785 			|			 16.091 			|			 6.6943 			|
+|	 $\beta$-VAE 			|			 49.576 			|			 38.874 			|			 1.0703 			|
+|	 InfoVAE 			|			 13.743 			|			 11.967 			|			 52.1380 			|
+|	 GCVAE $^\dagger$ 			|			 10.443 			|			 10.749 			|			 28.1314 			|
+|	 GCVAE $^\ddagger$ 			|			 11.487 			|			 10.797 			|			 28.1542 			|
+
+#### Latent- $v_k \in \mathbb{R}^{15}$
+
+|		 Model 		|		 Factor-VAE 		|		 MIG 		|		 Modularity 		|		 Jemmig 		|
+|----------------------|--------------------------|------------|---------------------|----------------|
+|	 VAE 		|		 712.25 +/- 8.75 		|		 0.23 		|		 0.65 		|		 0.29 		|
+|	 $\beta$-VAE 		|		 707.55 +/- 8.74 		|		 0.18 		|		 0.54 		|		 0.30 		|
+|	 InfoVAE 		|		 711.90 +/- 12.86 		|		 0.09 		|		 0.90 		|		 0.25 		|
+|	 GCVAE $^\dagger$ 		|		 714.35 +/- 12.11 		|		 0.12 		|		 0.89 		|		 0.27 		|
+|	 GCVAE $^\ddagger$ 		|		 720.65 +/- 16.25 		|		 0.15 		|		 0.89 		|		 0.31 		|
+
+
+|		 Model 		|		 Total loss 		|		 Reconstruction 		|		 KL divergence |
+|---------------|------------------|-----------------------|------------------|
+|	 VAE 			|			 22.899 			|			 16.251 			|			 6.6482 			|
+|	 $\beta$-VAE 			|			 49.711 			|			 39.237 			|			 1.0474 			|
+|	 InfoVAE 			|			 11.494 			|			 10.175 			|			 89.3161 			|
+|	 GCVAE $^\dagger$ 			|			 9.917 			|			 9.881 			|			 28.7155 			|
+|	 GCVAE $^\ddagger$ 			|			 11.313 			|			 9.672 			|			 28.9077 			|
+
+
 # Paper
 - Brief document explaining solution: [Paper](https://github.com/kennedyCzar/Latent-Modeling-for-Early-Prediction-of-Sepsis-from-Clinical-Data/blob/main/Results/Latent_3.png](https://github.com/kennedyCzar/Latent-Modeling-for-Early-Prediction-of-Sepsis-from-Clinical-Data/blob/main/Latent_Modeling_for_Early_Prediction_of_Septis.pdf)https://github.com/kennedyCzar/Latent-Modeling-for-Early-Prediction-of-Sepsis-from-Clinical-Data/blob/main/Latent_Modeling_for_Early_Prediction_of_Septis.pdf)
